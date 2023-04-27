@@ -99,7 +99,12 @@ const Body = ({ page, mintedNft }) => {
             {nfts ? (
               nfts.map((v, i) => {
                 return (
-                  <NftCard key={i} tokenId={v.tokenId} metadata={v.metadata} />
+                  <NftCard
+                    key={i}
+                    tokenId={v.tokenId}
+                    metadata={v.metadata}
+                    mintedNft={mintedNft}
+                  />
                 );
               })
             ) : (

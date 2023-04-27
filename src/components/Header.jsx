@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { SiAcademia } from "react-icons/si";
 import { BiWallet } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const Header = ({ account, setAccount }) => {
   const onClickAccount = async () => {
@@ -19,10 +20,12 @@ const Header = ({ account, setAccount }) => {
   return (
     <header className="flex justify-between bg-black">
       <div className="flex items-center font-bold">
-        <div className="flex items-center text-yellow-400 p-4 ml-2">
-          <SiAcademia size={27} />
-          <div className="ml-2 text-2xl hidden md:inline-block">ATTI-BCS</div>
-        </div>
+        <Link to="/">
+          <div className="flex items-center text-yellow-400 p-4 ml-2">
+            <SiAcademia size={27} />
+            <div className="ml-2 text-2xl hidden md:inline-block">ATTI-BCS</div>
+          </div>
+        </Link>
         <div className="bg-black h-16 w-96 border-x-[1px] border-gray-500 ml-6 hidden lg:inline-block">
           <form className="w-full h-full">
             <input

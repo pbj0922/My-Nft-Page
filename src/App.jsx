@@ -14,7 +14,7 @@ function App() {
         <Header account={account} setAccount={setAccount} />
         <Routes>
           <Route path="/" element={<Main account={account} />} />
-          <Route path="/:tokenId" element={<Detail />} />
+          <Route path="/:tokenId" element={<Detail account={account} />} />
         </Routes>
         <Footer />
       </div>
