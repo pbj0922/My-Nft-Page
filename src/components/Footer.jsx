@@ -7,7 +7,7 @@ import { BsDiscord } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <footer className="flex justify-between">
+    <footer className="flex justify-between bg-black py-10">
       <div className="flex items-center font-bold text-gray-500 px-8 gap-8">
         <div className="text-gray-200 flex items-center gap-2 border-r-[1px] border-gray-500 pr-8">
           <div>

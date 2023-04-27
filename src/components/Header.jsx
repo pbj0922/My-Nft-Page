@@ -17,7 +17,7 @@ const Header = ({ account, setAccount }) => {
   };
 
   return (
-    <header className="flex justify-between">
+    <header className="flex justify-between bg-black">
       <div className="flex items-center font-bold">
         <div className="flex items-center text-yellow-400 p-4 ml-2">
           <SiAcademia size={27} />
@@ -43,9 +43,8 @@ const Header = ({ account, setAccount }) => {
         <div className="text-lg mr-6 text-gray-500 font-bold">FAQ</div>
         <div className="text-lg mr-6 text-gray-500">KRW</div>
         {account ? (
-          <div className="mr-6 py-2 px-4 bg-zinc-800 text-yellow-400 font-bold rounded-full flex justify-center items-center">
-            {account.substring(0, 4)}...
-            {account.substring(account.length - 4)}
+          <div className="mr-6 h-9 w-9 bg-yellow-400 text-black rounded-full flex justify-center items-center">
+            <BiWallet size={25} />
           </div>
         ) : (
           <button
