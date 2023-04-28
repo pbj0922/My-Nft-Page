@@ -44,9 +44,9 @@ const Intro = ({ totalNft, mintedNft, myNft }) => {
               <div>개발자가 되고픈 자 강서구로 모여라</div>
               <div>콜라를 사서 김포공항으로 오시오</div>
               <div>모든걸 전수해드립니다</div>
-              <div>h662가 미래입니다..!!</div>
+              <div>h662가 미래다..!!</div>
             </div>
-            <div className="flex gap-8 mt-8 text-xs text-gray-400 font-bold">
+            <div className="flex gap-8 mt-8 text-xs text-gray-400 font-bold max-lg:hidden">
               <div>
                 <div className="text-2xl text-white">{totalNft}</div>
                 <div>총 NFT</div>

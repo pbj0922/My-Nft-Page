@@ -72,14 +72,22 @@ const Body = ({ page, mintedNft }) => {
     <>
       <div className="flex justify-between border-b-[1px] border-gray-500 p-5 font-bold text-gray-500">
         <div className="flex gap-6">
-          <div>아이템</div>
-          <div>활동내역</div>
+          <button>아이템</button>
+          <button>활동내역</button>
         </div>
         <div className="flex gap-4">
-          <FaEthereum size={25} />
-          <BsDiscord size={25} />
-          <BsTwitter size={25} />
-          <BsThreeDotsVertical size={25} />
+          <button>
+            <FaEthereum size={25} />
+          </button>
+          <button>
+            <BsDiscord size={25} />
+          </button>
+          <button>
+            <BsTwitter size={25} />
+          </button>
+          <button>
+            <BsThreeDotsVertical size={25} />
+          </button>
         </div>
       </div>
       <div className="flex my-6 pb-12">
@@ -92,7 +100,7 @@ const Body = ({ page, mintedNft }) => {
               </button>
               <div>{mintedNft}개의 NFT</div>
             </div>
-            <div>{pageComp()}</div>
+
             <div>낮은 가격순</div>
           </div>
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 justify-items-center gap-6 mt-8">
@@ -111,6 +119,9 @@ const Body = ({ page, mintedNft }) => {
               <div>로딩중입니다...</div>
             )}
           </ul>
+          <div className="flex justify-center items-center py-5">
+            {pageComp()}
+          </div>
         </div>
       </div>
     </>

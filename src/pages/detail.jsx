@@ -63,11 +63,17 @@ const Detail = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[512px] flex flex-col pt-4">
+            <div className="w-[512px] flex flex-col pt-4 max-lg:hidden">
               <div className="flex justify-end text-3xl pr-4 gap-2">
-                <AiOutlineReload />
-                <AiOutlineShareAlt />
-                <AiOutlineFullscreen />
+                <button>
+                  <AiOutlineReload />
+                </button>
+                <button>
+                  <AiOutlineShareAlt />
+                </button>
+                <button>
+                  <AiOutlineFullscreen />
+                </button>
               </div>
               <div className="flex justify-start gap-1 font-bold text-2xl">
                 <div className="text-gray-400">DESIGN BY h662</div>
@@ -101,7 +107,7 @@ const Detail = () => {
             </div>
           </div>
           <div className="flex gap-16">
-            <div className="w-[512px]">
+            <div className="w-[512px] max-lg:hidden">
               <div className="border-[1px] border-gray-400 h-full mt-10 rounded-3xl pt-7 px-7">
                 <div className="flex items-center text-lg font-bold gap-2">
                   <AiOutlineProfile size={25} />
@@ -170,7 +176,7 @@ const Detail = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[512px]">
+            <div className="w-[512px] max-lg:hidden">
               <div className="border-[1px] border-gray-400 h-full mt-10 rounded-3xl p-7">
                 <div className="flex items-center text-lg font-bold gap-2">
                   <RiNewspaperLine size={25} />

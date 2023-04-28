@@ -1,11 +1,12 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaFilter } from "react-icons/fa";
 import { MdArrowBackIosNew } from "react-icons/md";
-import { SlArrowDown } from "react-icons/sl";
+
+import PropertyBox from "./PropertyBox";
 
 const FilterBox = ({ mintedNft, nfts }) => {
   const [isBoxClose, setIsBoxClose] = useState(false);
+
   const [isSelling, setIsSelling] = useState(false);
   const [isETCorUSDC, setIsETCorUSDC] = useState(true);
 
@@ -22,6 +23,7 @@ const FilterBox = ({ mintedNft, nfts }) => {
   const OnClickFilterBox = () => {
     setIsBoxClose(!isBoxClose);
   };
+
   const OnClickSellingBar = () => {
     setIsSelling(!isSelling);
   };
@@ -34,7 +36,7 @@ const FilterBox = ({ mintedNft, nfts }) => {
       {isBoxClose ? (
         <button
           onClick={OnClickFilterBox}
-          className="bg-gray-200 h-24 w-[58px] rounded-r-2xl justify-center items-center hidden lg:inline-block"
+          className="bg-gray-200 h-24 w-[58px] rounded-r-2xl justify-center items-center max-lg:hidden"
         >
           <div className="text-black pl-3">
             <FaFilter size={30} />
@@ -103,17 +105,7 @@ const FilterBox = ({ mintedNft, nfts }) => {
               <div className="mt-4">
                 <ul className="w-[250px] grid grid-cols-1 gap-4 text-white font-bold">
                   {AttributesTraitType.map((v, i) => {
-                    return (
-                      <li
-                        key={i}
-                        className="bg-gray-800 h-[72px] rounded-2xl flex justify-between items-center"
-                      >
-                        <div className="pl-5">{v}</div>
-                        <button className="pr-6">
-                          <SlArrowDown />
-                        </button>
-                      </li>
-                    );
+                    return <PropertyBox key={i} TraitType={v} />;
                   })}
                 </ul>
               </div>
