@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { SiAcademia } from "react-icons/si";
+import { TEACHER_WALLET_ADDRESS } from "../web3.config";
 
 const ranNum = Math.floor(Math.random() * 1000) + 1;
 const imgSrc = `${process.env.REACT_APP_IMAGE_URL}/${ranNum}.png`;
 
-const Intro = ({ account, totalNft, mintedNft, myNft }) => {
+const Intro = ({ totalNft, mintedNft, myNft }) => {
   const [ethLowPrice, setETHLowPrice] = useState(0);
   const [ethSaleRate, setETHSaleRate] = useState(0);
   const [usdcLowPrice, setUSDCLowPrice] = useState(0);
@@ -36,14 +37,14 @@ const Intro = ({ account, totalNft, mintedNft, myNft }) => {
             </div>
             <div className="flex gap-1 text-gray-400 mt-4 font-bold">
               <div>by</div>
-              <div className="text-yellow-400">{account}</div>
+              <div className="text-yellow-400">{TEACHER_WALLET_ADDRESS}</div>
+              {/* <div className="text-yellow-400">{account}</div> */}
             </div>
             <div className="text-gray-400 font-bold text-md mt-1 w-[370px]">
-              <div>Learning to lover yourself is the greatest love of all</div>
-              <div>
-                자신을 사랑하는 법을 배우는 것은 모든 것 중에서 가장 위대한
-                사랑이다.
-              </div>
+              <div>개발자가 되고픈 자 강서구로 모여라</div>
+              <div>콜라를 사서 김포공항으로 오시오</div>
+              <div>모든걸 전수해드립니다</div>
+              <div>h662가 미래입니다..!!</div>
             </div>
             <div className="flex gap-8 mt-8 text-xs text-gray-400 font-bold">
               <div>

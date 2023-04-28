@@ -12,7 +12,7 @@ const NftCard = ({ tokenId, metadata, mintedNft }) => {
 
   return (
     <>
-      <div className="relative rounded-xl bg-gray-700 pb-4">
+      <div className="relative rounded-xl bg-gray-800 pb-2">
         {parseInt(mintedNft) < tokenId && (
           <div className="absolute bg-black w-full h-full bg-opacity-80 rounded-xl flex justify-center items-center text-4xl font-bold">
             Not Minted.
@@ -41,9 +41,8 @@ const NftCard = ({ tokenId, metadata, mintedNft }) => {
           <div className="text-gray-400 text-sm">판매가</div>
           <div className="text-lg">-</div>
         </div>
-
         {popup && (
-          <div className="bg-gray-700 w-40 h-28 border-[1px] border-white absolute top-[75%] right-[5%] rounded-xl flex flex-col justify-center gap-2 font-bold">
+          <div className="bg-gray-800 w-40 h-28 border-[1px] border-white absolute top-[75%] right-[5%] rounded-xl flex flex-col justify-center gap-2 font-bold">
             <button className="w-full flex justify-start pl-4">제안하기</button>
             <button className="w-full flex justify-start pl-4">
               데이터 새로고침

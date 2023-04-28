@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col justify-center text-sm gap-1">
           <div>대표이사 박범진</div>
-          <div>사업자 등록번호 01-2345-6789</div>
+          <div>사업자 등록번호 012-345-6789</div>
         </div>
         <div className="flex flex-col justify-center text-sm gap-1">
           <div>주소 경기도 김포시 고촌읍 어딘가</div>

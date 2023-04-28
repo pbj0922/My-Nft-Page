@@ -18,8 +18,8 @@ const Body = ({ page, mintedNft }) => {
 
       setNfts();
 
-      for (let i = 0; i < 10; i++) {
-        const tokenId = i + 1 + (p - 1) * 10;
+      for (let i = 0; i < 20; i++) {
+        const tokenId = i + 1 + (p - 1) * 20;
 
         let response = await axios.get(
           `${process.env.REACT_APP_JSON_URL}/${tokenId}.json`
@@ -83,11 +83,11 @@ const Body = ({ page, mintedNft }) => {
         </div>
       </div>
       <div className="flex my-6 pb-12">
-        <FilterBox />
-        <div className="w-full px-8">
+        <FilterBox mintedNft={mintedNft} nfts={nfts} />
+        <div className="w-full h-[1000px] px-8 overflow-y-scroll scrollbar-hide">
           <div className="flex justify-between items-center font-bold">
             <div className="flex gap-2 items-center">
-              <button className="bg-gray-700 h-9 w-9 flex justify-center items-center rounded-xl">
+              <button className="bg-gray-800 h-9 w-9 flex justify-center items-center rounded-xl">
                 <AiOutlineReload size={20} />
               </button>
               <div>{mintedNft}개의 NFT</div>

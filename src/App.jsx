@@ -10,11 +10,11 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-800 text-white">
+      <div className="min-h-screen bg-zinc-900 text-white">
         <Header account={account} setAccount={setAccount} />
         <Routes>
           <Route path="/" element={<Main account={account} />} />
-          <Route path="/:tokenId" element={<Detail account={account} />} />
+          <Route path="/:tokenId" element={<Detail />} />
         </Routes>
         <Footer />
       </div>

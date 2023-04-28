@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import { SiAcademia } from "react-icons/si";
 import { BiWallet } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 const Header = ({ account, setAccount }) => {
+  const [showAccount, setShowAccount] = useState(true);
+
   const onClickAccount = async () => {
     try {
       const accounts = await window.ethereum.request({
@@ -15,6 +16,10 @@ const Header = ({ account, setAccount }) => {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const onClickShowAccount = () => {
+    setShowAccount(!showAccount);
   };
 
   return (
@@ -46,9 +51,23 @@ const Header = ({ account, setAccount }) => {
         <div className="text-lg mr-6 text-gray-500 font-bold">FAQ</div>
         <div className="text-lg mr-6 text-gray-500">KRW</div>
         {account ? (
-          <div className="mr-6 h-9 w-9 bg-yellow-400 text-black rounded-full flex justify-center items-center">
-            <BiWallet size={25} />
-          </div>
+          <button
+            onClick={onClickShowAccount}
+            className={`mr-6  font-bold rounded-full flex justify-center items-center ${
+              showAccount
+                ? "h-9 w-9 bg-yellow-400 text-black"
+                : "py-2 px-4 bg-zinc-800 text-yellow-400"
+            }`}
+          >
+            <BiWallet
+              className={`${showAccount ? "inline-block" : "hidden"}`}
+              size={25}
+            />
+            <div className={`${showAccount ? "hidden" : "inline-block"}`}>
+              {account.substring(0, 4)}...
+              {account.substring(account.length - 4)}
+            </div>
+          </button>
         ) : (
           <button
             onClick={onClickAccount}

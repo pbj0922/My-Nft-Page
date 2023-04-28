@@ -10,7 +10,7 @@ import { AiOutlineProfile } from "react-icons/ai";
 import { RiNewspaperLine } from "react-icons/ri";
 import { CONTRACT_ADDRESS, TEACHER_WALLET_ADDRESS } from "../web3.config";
 
-const Detail = ({ account }) => {
+const Detail = () => {
   const [metadata, setMetadata] = useState();
   const [heartCount, setHeartCount] = useState(0);
 
@@ -34,7 +34,6 @@ const Detail = ({ account }) => {
 
   useEffect(() => {
     getNft();
-    console.log(metadata);
   }, []);
 
   return (
@@ -44,7 +43,7 @@ const Detail = ({ account }) => {
           <div className="flex gap-16">
             <div className="max-w-[512px]">
               <img className="rounded-t-3xl" src={metadata.image} />
-              <div className="py-8 bg-gray-700 rounded-b-3xl">
+              <div className="py-8 bg-zinc-800 rounded-b-3xl">
                 <div className="flex justify-between items-center px-8">
                   <div className="text-xl font-bold">판매중이 아님</div>
                   <div className="flex flex-col items-center">
@@ -55,10 +54,10 @@ const Detail = ({ account }) => {
                   </div>
                 </div>
                 <div className="flex justify-around items-center px-3 pt-8">
-                  <button className="bg-gray-500 w-52 h-12 rounded-lg hover:bg-gray-400">
+                  <button className="bg-zinc-700 w-52 h-[54px] rounded-lg hover:bg-zinc-500">
                     공유하기
                   </button>
-                  <button className="bg-yellow-400 text-black w-52 h-12 rounded-lg">
+                  <button className="bg-yellow-400 text-black w-52 h-[54px] rounded-lg">
                     제안하기
                   </button>
                 </div>
@@ -70,7 +69,7 @@ const Detail = ({ account }) => {
                 <AiOutlineShareAlt />
                 <AiOutlineFullscreen />
               </div>
-              <div className="flex items-center gap-1 font-bold text-2xl">
+              <div className="flex justify-start gap-1 font-bold text-2xl">
                 <div className="text-gray-400">DESIGN BY h662</div>
                 <div className="w-6 h-6 bg-yellow-400 rounded-full flex justify-center items-center text-black mt-1">
                   <SiAcademia size={15} />
@@ -81,14 +80,12 @@ const Detail = ({ account }) => {
                 <div className="text-gray-400 font-bold mt-4">
                   <div className="flex gap-1">
                     소유자
-                    {account ? (
-                      <div className="text-yellow-400">
-                        {account.substring(0, 4)}...
-                        {account.substring(account.length - 4)}
-                      </div>
-                    ) : (
-                      <div>소유자</div>
-                    )}
+                    <div className="text-yellow-400">
+                      {TEACHER_WALLET_ADDRESS.substring(0, 4)}...
+                      {TEACHER_WALLET_ADDRESS.substring(
+                        TEACHER_WALLET_ADDRESS.length - 4
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -113,7 +110,7 @@ const Detail = ({ account }) => {
                 <div className="flex flex-col px-1 mt-4">
                   <div>
                     <div className="font-bold text-lg">크리에이터</div>
-                    <div className="bg-gray-500 w-[440px] h-28 rounded-lg flex text-xs font-bold gap-4 py-4 items-center mt-4 text-gray-300">
+                    <div className="bg-zinc-800 w-[440px] h-28 rounded-lg flex text-xs font-bold gap-4 py-4 items-center mt-4 text-gray-300">
                       <div className="flex flex-col gap-5 pl-4">
                         <div className="flex gap-4 items-center">
                           <div className="w-[90px]">컨트랙트 주소</div>
@@ -158,7 +155,7 @@ const Detail = ({ account }) => {
                           return (
                             <li
                               key={i}
-                              className="bg-gray-500 w-28 p-4 rounded-xl"
+                              className="bg-zinc-800 w-28 p-4 rounded-xl"
                             >
                               <div>{v.trait_type}</div>
                               <div className="mt-1 font-bold text-white">
